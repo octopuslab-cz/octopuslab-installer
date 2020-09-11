@@ -1,4 +1,6 @@
-def deploy(url):
+URL="https://octopusengine.org/download/micropython/stable.tar"
+
+def deploy(url=URL):
     import sys
     import os
     import lib.shutil as shutil
@@ -41,8 +43,3 @@ def shutil():
     print("Installing shutil")
     upip.install("micropython-shutil")
     print("Running deploy")
-
-
-shutil()
-deplUrl="https://octopusengine.org/download/micropython/stable.tar"
-deploy(deplUrl)
