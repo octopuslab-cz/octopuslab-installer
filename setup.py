@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="micropython-octopuslab-installer",
-    version="0.0.3",
+    version="0.1.0",
     author="Vašek Chalupníček",
     author_email="",
     description="OctopusLab installer for MicroPython",
