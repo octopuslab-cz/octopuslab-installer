@@ -1,1 +1,1 @@
-from .octopus_installer import *
+from .octopuslab_installer import *
