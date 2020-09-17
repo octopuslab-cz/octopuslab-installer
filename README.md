@@ -23,7 +23,6 @@ wlan.connect('essid', 'password')
 Install
 ```
 import upip
-upip.install('shutil')  # TODO include in `setup.py`
 upip.install('micropython-octopuslab-installer')
 from lib import octopuslab_installer
 octopuslab_installer.deploy()
@@ -40,22 +39,18 @@ Please proceed with inital configuration of your OctopusLab enabled board as per
 # initial setup of build environment
 git clone git@github.com:octopusengine/octopuslab-installer.git
 cd octopuslab-installer/
-python3 -m pip install --upgrade setuptools wheel
 python3 -m venv venv
 source ./venv/bin/activate
 pip install --upgrade wheel setuptools
-```
 
-```
 # PyPi publisher and authorisation
 pip install --upgrade twine
 mcedit ~/.pypirc
 chmod o-rwx ~/.pypirc
-```
 
-```
 # build command
-python setup.py sdist bdist_wheel
+python setup.py sdist
+
 # publish
 twine upload -r pypi dist/*
 ```
