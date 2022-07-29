@@ -24,13 +24,35 @@ Install
 ```
 import upip
 upip.install('micropython-octopuslab-installer')
-from lib import octopuslab_installer
-octopuslab_installer.deploy()
+from octopuslab_installer import deploy
+deploy()
 ```
 
-After this OctopusLab is installed in your ESP **don't forget to reboot**.
+After this OctopusLab from `https://octopusengine.org/download/micropython/stable.tar` is installed in your ESP **don't forget to reboot**.
 
 Please proceed with inital configuration of your OctopusLab enabled board as per [documentation](https://docs.octopuslab.cz/install/#setup-nastaveni-systemu)
+
+## Alternative images
+
+You may like to install an image from your custom location.
+
+```
+from octopuslab_installer import deploy
+deploy('http://192.168.1.100:8000/latest.tar')
+```
+
+Optionally you may store downloaded image for later offline restore. Also you may use wifi connection shortcut
+
+```
+from octopuslab_installer import connect, deploy
+connect('myssid', 'mypass')
+deploy('https://www.dtlab.cz/download/sensobox/latest.tar', '/img/latest.tar')
+```
+
+Then you may deploy offline from local file. 
+
+from octopuslab_installer import deploy
+deploy('/img/latest.tar')
 
 
 # Build and publish new version of this module
