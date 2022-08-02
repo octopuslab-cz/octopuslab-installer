@@ -1,6 +1,14 @@
 # OctopusLab Init Lite
 
-This module facilitates installation of OctopusLab MicroPython tools. We use it on ESP32 boards (all examples bellow), but it may work on other MicroPython ports as well.
+This module facilitates provisioning of ESP32 boards with MicroPython projects.
+
+We use it for deployment of [OctopusLab tools](https://docs.octopuslab.cz/) on ESP32 boards (all examples bellow), but it may work on other MicroPython ports as well.
+
+Purpose of this tool is to download a `.tar` file and unpack it to the file storage over existing content.
+
+Alternatively tar archive si stored locally for later offline restore a.k.a. factory reset.
+
+In future optional wipe of dangling files will be added.
 
 ## How to use?
 
@@ -49,11 +57,12 @@ connect('myssid', 'mypass')
 deploy('https://www.dtlab.cz/download/sensobox/latest.tar', '/img/latest.tar')
 ```
 
-Then you may deploy offline from local file. 
+Then you may deploy offline from local file as follows. 
 
+```
 from octopuslab_installer import deploy
 deploy('/img/latest.tar')
-
+```
 
 # Build and publish new version of this module
 
