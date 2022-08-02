@@ -8,7 +8,7 @@ Purpose of this tool is to download a `.tar` file and unpack it to the file stor
 
 Alternatively tar archive si stored locally for later offline restore a.k.a. factory reset.
 
-In future optional wipe of dangling files will be added.
+In the future optional wipe of dangling files will be added.
 
 ## How to use?
 
@@ -32,6 +32,10 @@ Install
 ```
 import upip
 upip.install('micropython-octopuslab-installer')
+```
+
+Run
+```
 from octopuslab_installer import deploy
 deploy()
 ```
@@ -49,19 +53,25 @@ from octopuslab_installer import deploy
 deploy('http://192.168.1.100:8000/latest.tar')
 ```
 
-Optionally you may store downloaded image for later offline restore. Also you may use wifi connection shortcut
+Optionally you may store downloaded image for later offline restore.
 
 ```
-from octopuslab_installer import connect, deploy
-connect('myssid', 'mypass')
+from octopuslab_installer import deploy
 deploy('https://www.dtlab.cz/download/sensobox/latest.tar', '/img/latest.tar')
 ```
 
-Then you may deploy offline from local file as follows. 
+Then you may redeploy offline from the local file as follows. This may be used for "factory reset" of your device.
 
 ```
 from octopuslab_installer import deploy
 deploy('/img/latest.tar')
+```
+
+Also you may use wifi connection shortcut if you redeploy updated image and you've lost connection e.g. due to a reboot.
+
+```
+from octopuslab_installer import connect
+connect('myssid', 'mypass')
 ```
 
 # Build and publish new version of this module
