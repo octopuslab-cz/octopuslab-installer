@@ -1,5 +1,27 @@
 URL="https://octopusengine.org/download/micropython/stable.tar"
 
+
+def exists(path):
+    import os
+    try:
+        os.stat(path)
+        return True
+    except OSError:
+        return False
+        
+def create_missing_dir(save_path):
+    import os
+    if save_path.startswith('/'):
+        save_path = save_path[1:]
+    
+    # create missing directories
+    dir_name = ""
+    for i in save_path.split('/')[:-1]:
+        dir_name += '/' + i
+        if not exists(dir_name):
+            print('Creating directory', dir_name)
+            os.mkdir(dir_name)
+
 def connect(ssid=None, psk=None):
     import network
     wlan = network.WLAN(network.STA_IF)
@@ -17,6 +39,11 @@ def download(source, target):
         if target.endswith('/'):
             print('Error, target must be filename not a directory')
             return
+        if not target.startswith('/'):
+            print('Error, target must start with /')
+            return
+        create_missing_dir(target)
+
         with open(target, 'wb') as f:
             print('Downloading', source, 'to', target)
             shutil.copyfileobj(res.raw, f)
@@ -28,13 +55,6 @@ def deploy(source=URL, save_path=None):
     import os
     import lib.shutil as shutil
     import upip_utarfile as utarfile
-
-    def exists(path):
-        try:
-            os.stat(path)
-            return True
-        except:
-            return False
 
     def wipe_fs():
         print('TODO wipe filesystem')
@@ -75,14 +95,7 @@ def deploy(source=URL, save_path=None):
                     print('Error, save_path must start with /')
                     return
                 
-                # create missing directories
-                split_path = save_path[1:]
-                dir_name = ""
-                for i in split_path.split('/')[:-1]:
-                    dir_name += '/' + i
-                    if not exists(dir_name):
-                        print('Creating directory', dir_name)
-                        os.mkdir(dir_name)
+                create_missing_dir(save_path)
 
                 with open(save_path, 'wb') as source_file:
                     print('Downloading image to', save_path)
