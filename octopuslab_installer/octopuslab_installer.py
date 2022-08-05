@@ -6,6 +6,23 @@ def connect(ssid=None, psk=None):
     wlan.active(True)
     wlan.connect(ssid, psk)
     
+def download(source, target):
+    import urequests
+    import lib.shutil as shutil
+    try:
+        res = urequests.get(source)
+        if not res.status_code == 200:
+            print('Error, response status code', res.status_code)
+            return
+        if target.endswith('/'):
+            print('Error, target must be filename not a directory')
+            return
+        with open(target, 'wb') as f:
+            print('Downloading', source, 'to', target)
+            shutil.copyfileobj(res.raw, f)
+    except OSError as e:
+        print(e)
+        print('Are you connected to wifi?')
 
 def deploy(source=URL, save_path=None):
     import os
