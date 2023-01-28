@@ -1,0 +1,11 @@
+{
+  "urls": [
+  ["octopuslab_installer/__init__.py", "github:octopuslab-cz/octopuslab-installer/octopuslab_installer/__init__.py"],    
+  ["octopuslab_installer/octopuslab_installer.py", "github:octopuslab-cz/octopuslab-installer/octopuslab_installer/octopuslab_installer.py"],    
+  
+    
+  ],
+  "deps": [
+  ],
+  "version": "0.2.0"
+}
