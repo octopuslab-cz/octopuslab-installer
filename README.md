@@ -34,6 +34,15 @@ import upip
 upip.install('micropython-octopuslab-installer')
 ```
 
+
+MIP.install
+
+```
+import mip
+mip.install("github:octopuslab-cz/octopuslab-installer", target=".")
+```
+
+
 Run
 ```
 from octopuslab_installer import deploy
