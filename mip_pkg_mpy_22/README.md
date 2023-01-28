@@ -1,7 +1,7 @@
-## run
+## OctopusLab Init Lite (for mip)
 
 ```
-# connect....
+# wifi_connect....
 
 
 import mip
