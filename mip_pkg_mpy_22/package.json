@@ -1,7 +1,7 @@
 {
   "urls": [
-  ["octopuslab_installer/__init__.py", "github:github:octopuslab-cz/octopuslab-installer/mip_pkg_mpy_22/octopuslab_installer/__init__.py"],    
-  ["octopuslab_installer/octopuslab_installer.py", "github:github:octopuslab-cz/octopuslab-installer/mip_pkg_mpy_22/octopuslab_installer.py"],    
+  ["octopuslab_installer/__init__.py", "github:octopuslab-cz/octopuslab-installer/mip_pkg_mpy_22/octopuslab_installer/__init__.py"],    
+  ["octopuslab_installer/octopuslab_installer.py", "github:octopuslab-cz/octopuslab-installer/mip_pkg_mpy_22/octopuslab_installer.py"],    
       
   ],
   "deps": [
