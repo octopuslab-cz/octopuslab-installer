@@ -28,7 +28,7 @@ wlan.active(True)
 wlan.connect('essid', 'password')
 ```
 
-Install
+Install (upip - deprecated)
 ```
 import upip
 upip.install('micropython-octopuslab-installer')
