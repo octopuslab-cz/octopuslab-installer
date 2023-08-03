@@ -2,8 +2,7 @@
   "urls": [
   ["octopuslab_installer/__init__.py", "github:octopuslab-cz/octopuslab-installer/octopuslab_installer/__init__.py"],    
   ["octopuslab_installer/octopuslab_installer.py", "github:octopuslab-cz/octopuslab-installer/octopuslab_installer/octopuslab_installer.py"],    
-  ["lib/shutil.py", "github:octopuslab-cz/octopuslab-installer/octopuslab-installer/lib/shutil.py"],
-    
+  ["lib/shutil.py", "github:octopuslab-cz/octopuslab-installer/octopuslab-installer/lib/shutil.py"]
   ],
   "deps": [
   ],
