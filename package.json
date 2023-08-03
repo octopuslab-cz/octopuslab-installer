@@ -1,10 +1,13 @@
 {
   "urls": [
   ["octopuslab_installer/__init__.py", "github:octopuslab-cz/octopuslab-installer/octopuslab_installer/__init__.py"],    
-  ["octopuslab_installer/octopuslab_installer.py", "github:octopuslab-cz/octopuslab-installer/octopuslab_installer/octopuslab_installer.py"],    
-  ["lib/shutil.py", "github:octopuslab-cz/octopuslab-installer/lib/shutil.py"]
+  ["octopuslab_installer/octopuslab_installer.py", "github:octopuslab-cz/octopuslab-installer/octopuslab_installer/octopuslab_installer.py"],  
+
+  ["lib/shutil.py", "github:octopuslab-cz/octopuslab-installer/lib/shutil.py"],
+  ["lib/upip.py", "github:octopuslab-cz/octopuslab-installer/lib/upip.py"],
+  ["lib/upip_utarfile.py", "github:octopuslab-cz/octopuslab-installer/lib/upip_utarfile.py"]
   ],
   "deps": [
   ],
-  "version": "0.2.1"
+  "version": "2.0.0"
 }
