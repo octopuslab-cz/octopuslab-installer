@@ -21,7 +21,7 @@ screen /dev/ttyUSB0 115200
 ```
 
 Connect to WiFi
-```
+```Python
 import network
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
@@ -29,7 +29,7 @@ wlan.connect('essid', 'password')
 ```
 
 Install (upip - deprecated)
-```
+```Python
 import upip
 upip.install('micropython-octopuslab-installer')
 ```
@@ -37,14 +37,14 @@ upip.install('micropython-octopuslab-installer')
 
 MIP.install
 
-```
+```Python
 import mip
 mip.install("github:octopuslab-cz/octopuslab-installer", target=".")
 ```
 
 
 Run
-```
+```Python
 from octopuslab_installer import deploy
 deploy()
 ```
@@ -57,28 +57,28 @@ Please proceed with inital configuration of your OctopusLab enabled board as per
 
 You may like to install an image from your custom location.
 
-```
+```Python
 from octopuslab_installer import deploy
 deploy('http://192.168.1.100:8000/latest.tar')
 ```
 
 Optionally you may store downloaded image for later offline restore.
 
-```
+```Python
 from octopuslab_installer import deploy
 deploy('https://www.dtlab.cz/download/sensobox/latest.tar', '/img/latest.tar')
 ```
 
 Then you may redeploy offline from the local file as follows. This may be used for "factory reset" of your device.
 
-```
+```Python
 from octopuslab_installer import deploy
 deploy('/img/latest.tar')
 ```
 
 Also you may use wifi connection shortcut if you redeploy updated image and you've lost connection e.g. due to a reboot.
 
-```
+```Python
 from octopuslab_installer import connect
 connect('myssid', 'mypass')
 ```
@@ -104,3 +104,4 @@ python setup.py sdist
 # publish
 twine upload -r pypi dist/*
 ```
+
