@@ -28,14 +28,14 @@ wlan.active(True)
 wlan.connect('essid', 'password')
 ```
 
-Install (upip - deprecated)
+Install (upip - deprecated - uPy ver. 1.19-)
 ```Python
 import upip
 upip.install('micropython-octopuslab-installer')
 ```
 
 
-MIP.install
+MIP.install (upy ver. 1.20+)
 
 ```Python
 import mip
@@ -46,7 +46,7 @@ mip.install("github:octopuslab-cz/octopuslab-installer", target=".")
 Run
 ```Python
 from octopuslab_installer import deploy
-deploy()
+deploy() # deploy(url)
 ```
 
 After this OctopusLab from `https://octopusengine.org/download/micropython/stable.tar` is installed in your ESP **don't forget to reboot**.
